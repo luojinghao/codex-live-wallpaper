@@ -1,0 +1,22 @@
+# Local development evidence, scraped pages and downloaded media.
+/wallpaper-case/
+/dist/
+/node_modules/
+/coverage/
+*.log
+*.tmp
+*.part
+*.catalog.json
+
+# Credentials and machine-specific settings.
+.env
+.env.*
+!.env.example
+auth.json
+credentials.json
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

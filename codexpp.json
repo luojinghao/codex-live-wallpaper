@@ -1,0 +1,105 @@
+{
+  "id": "live-wallpaper-studio",
+  "name": "动态壁纸 · Live Canvas",
+  "version": "1.2.0",
+  "repository": "https://github.com/luojinghao/codex-live-wallpaper",
+  "description": "五源分类动态壁纸：新增 Mixkit 实拍与抽象素材；全部源聚合筛选，自然风景、人文生活、城市建筑、抽象几何等分类，保留原版画质与模糊适配设置。",
+  "engines": {
+    "codexpp": 1
+  },
+  "renderer": [
+    "renderer.js"
+  ],
+  "permissions": {
+    "routes": []
+  },
+  "config": {
+    "dim": {
+      "type": "number",
+      "title": "默认背景遮罩（%）",
+      "default": 38,
+      "min": 0,
+      "max": 85
+    },
+    "blur": {
+      "type": "number",
+      "title": "默认背景模糊（px）",
+      "default": 0,
+      "min": 0,
+      "max": 18
+    },
+    "glass": {
+      "type": "number",
+      "title": "默认面板遮罩（%）",
+      "default": 62,
+      "min": 15,
+      "max": 95
+    },
+    "glassBlur": {
+      "type": "number",
+      "title": "默认玻璃模糊（px）",
+      "default": 8,
+      "min": 0,
+      "max": 24
+    },
+    "fit": {
+      "type": "select",
+      "title": "默认画面适配",
+      "default": "contain",
+      "options": [
+        {
+          "value": "contain",
+          "label": "完整显示 · 不裁切"
+        },
+        {
+          "value": "cover",
+          "label": "填充整窗 · 裁切"
+        },
+        {
+          "value": "fill",
+          "label": "拉伸铺满 · 可能变形"
+        }
+      ]
+    },
+    "quality": {
+      "type": "select",
+      "title": "默认视频画质",
+      "default": "auto",
+      "options": [
+        {
+          "value": "auto",
+          "label": "自动 · 优先 1080p"
+        },
+        {
+          "value": "preview",
+          "label": "预览"
+        },
+        {
+          "value": "hd",
+          "label": "1080p 原版"
+        },
+        {
+          "value": "2k",
+          "label": "2K 原版（若可用）"
+        },
+        {
+          "value": "4k",
+          "label": "4K 原版"
+        }
+      ]
+    },
+    "pauseHidden": {
+      "type": "boolean",
+      "title": "窗口不可见时暂停播放",
+      "default": true
+    },
+    "respectMotion": {
+      "type": "boolean",
+      "title": "首次使用尊重系统减少动态效果",
+      "default": true
+    }
+  },
+  "backend": {
+    "script": "backend/main.mjs"
+  }
+}
